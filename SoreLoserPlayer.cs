@@ -11,24 +11,32 @@ namespace ShootingDice
         public override void Play(Player other)
         {
             // Call roll for "this" object and for the "other" object
-            int myRoll = Roll();
-            int otherRoll = other.Roll();
+            try
+            {
+                int myRoll = Roll();
+                int otherRoll = other.Roll();
 
-            Console.WriteLine($"{Name} rolls a {myRoll}");
-            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
-            if (myRoll > otherRoll)
-            {
-                Console.WriteLine($"{Name} Wins!");
+                Console.WriteLine($"{Name} rolls a {myRoll}");
+                Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+                if (myRoll > otherRoll)
+                {
+                    Console.WriteLine($"{Name} Wins!");
+                }
+                else if (myRoll < otherRoll)
+                {
+                    Console.WriteLine($"{other.Name} Wins!");
+
+                    throw new InvalidOperationException();
+                }
+                else
+                {
+                    // if the rolls are equal it's a tie
+                    Console.WriteLine("It's a tie");
+                }
             }
-            else if (myRoll < otherRoll)
+            catch (InvalidOperationException)
             {
-                Console.WriteLine("YOU CHEATED! I QUIT!");
-                throw new InvalidOperationException();
-            }
-            else
-            {
-                // if the rolls are equal it's a tie
-                Console.WriteLine("It's a tie");
+                Console.WriteLine($"{Name} says {other.Name} CHEATED! I QUIT!");
             }
         }
     }

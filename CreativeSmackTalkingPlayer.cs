@@ -10,7 +10,8 @@ namespace ShootingDice
             List<string> insults = new List<string>
             {
                 "You stink and I don't like you",
-                "Yo momma so fat",
+                "Yo momma is so fat",
+                "Yo momma is so stupid",
                 "Learn from your parents' mistakes - use birth control!",
                 "I wasn't born with enough middle fingers to let you know how I feel."
             };
