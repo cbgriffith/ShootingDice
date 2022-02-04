@@ -47,15 +47,15 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-            HumanPlayer humanPlayer = new HumanPlayer();
-            humanPlayer.Name = "Cheater";
+            HumanPlayer cheater = new HumanPlayer();
+            cheater.Name = "Cheater";
 
-            higher.Play(humanPlayer);
+            higher.Play(cheater);
 
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, smacker, higher, humanPlayer
+                player1, player2, player3, large, smacker, higher, cheater
             };
 
             PlayMany(players);
