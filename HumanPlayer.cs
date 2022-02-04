@@ -9,7 +9,7 @@ namespace ShootingDice
     {
         public override int Roll()
         {
-            Console.WriteLine("Enter your number you dirty cheater");
+            Console.Write("Enter your number you dirty cheater: ");
             return Convert.ToInt32(Console.ReadLine());
         }
     }
