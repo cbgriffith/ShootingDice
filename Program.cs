@@ -47,15 +47,40 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
-            HumanPlayer cheater = new HumanPlayer();
+            Player cheater = new HumanPlayer();
             cheater.Name = "Cheater";
 
             higher.Play(cheater);
 
             Console.WriteLine("-------------------");
 
+            CreativeSmackTalkingPlayer randomSmacker = new CreativeSmackTalkingPlayer();
+            randomSmacker.Name = "Random Insult Asshole";
+
+            cheater.Play(randomSmacker);
+
+            Console.WriteLine("-------------------");
+
+            SoreLoserPlayer soreLoser = new SoreLoserPlayer();
+            soreLoser.Name = "Crybaby";
+
+            randomSmacker.Play(soreLoser);
+            soreLoser.Play(player1);
+            soreLoser.Play(player2);
+            soreLoser.Play(player3);
+
+            Console.WriteLine("-------------------");
+
+            Player upperHalf = new UpperHalfPlayer();
+            upperHalf.Name = "Upper Halfer";
+
+            soreLoser.Play(upperHalf);
+        
+
+            Console.WriteLine("-------------------");
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, smacker, higher, cheater
+                player1, player2, player3, large, smacker, higher, cheater, randomSmacker, soreLoser, upperHalf
             };
 
             PlayMany(players);

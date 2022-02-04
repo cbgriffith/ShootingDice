@@ -11,8 +11,8 @@ namespace ShootingDice
 
         public override int Roll()
         {
-            Console.WriteLine($"{this.Name} says: {Taunt}");
-            return new Random().Next(DiceSize) + 1;
+            Console.WriteLine($"{this.Name} says: {this.Taunt}");
+            return base.Roll();
         }
     }
 }
